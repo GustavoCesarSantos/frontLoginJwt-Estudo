@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import api from '../../services/api';
+import { login } from '../../services/auth';
 
-export default function Login() {
+export default function Login({ history }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -10,8 +11,9 @@ export default function Login() {
     event.preventDefault();
     
     const response = await api.post('/login', { email, password });
-
-    console.log('TESTE: ',response.data);
+    if(response.data)
+      login(response.data);
+      history.push('/dashboard');
   }
 
   return (
