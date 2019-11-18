@@ -8,11 +8,9 @@ const api = axios.create({
 
 api.interceptors.request.use(async config => {
   const token = getToken();
-  if (token) {
-    console.log(config);
-    
+  if (token)
     config.headers['x-access-token'] = `Bearer ${token}`;
-  }
+
   return config;
 });
 

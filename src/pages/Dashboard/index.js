@@ -10,7 +10,7 @@ export default function Dashboard() {
 
     // const token = getToken();
     const response = await api.get('/posts');
-    console.log(response);
+    console.log(response.data);
   }
 
   return(
