@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '../../components/Header/index';
-// import { getToken } from '../../services/auth';
 import api from '../../services/api';
+
+import Header from '../../components/Header/index';
 
 export default function Dashboard() {
   async function hanbleSubmit(event){
@@ -16,7 +16,10 @@ export default function Dashboard() {
   return(
     <>
       <Header tittle="Dashboard"></Header>
-      <button onClick={ hanbleSubmit }>CLICK</button>
+      
+      <div onLoad={ hanbleSubmit }>
+        
+      </div>
     </>
   );
 };

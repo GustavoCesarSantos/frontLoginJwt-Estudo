@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import api from '../../services/api';
 import { login } from '../../services/auth';
 
+import Header from '../../components/Header/index';
+
 export default function Login({ history }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +20,8 @@ export default function Login({ history }) {
 
   return (
     <>
+      <Header tittle="Login" />
+      
       <form onSubmit={ handleSubmit }>
 
         <label htmlFor="email"> E-mail </label>
